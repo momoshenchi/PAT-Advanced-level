@@ -5,8 +5,8 @@
 using namespace std;
 
 double ans[4][4];
+char s[]={0,'W','T','L'};
 
-void pri (double ans[][4],int num);
 
 int main(void)
 {
@@ -22,25 +22,11 @@ int main(void)
     }
 
     sum+=2*(*max_element(ans[0],ans[0]+4)**max_element(ans[1],ans[1]+4)**max_element(ans[2],ans[2]+4)*0.65-1);
-    pri(ans,0);
-    pri(ans,1);
-    pri(ans,2);
+    for(int i=0;i<3;++i)
+    {
+        printf("%c ",s[max_element(ans[i],ans[i]+4)-ans[i]]);
+    }
+    
     printf("%.2f",sum);
     return 0;
-}
-
-void pri (double ans[][4],int num)
-{
-    if((max_element(ans[num],ans[num]+4)-ans[num])==1)
-    {
-        cout<<"W"<<" ";
-    }
-    else if ((max_element(ans[num],ans[num]+4)-ans[num])==2)
-    {
-        cout<<"T"<<" ";
-    }
-    else if ((max_element(ans[num],ans[num]+4)-ans[num])==3)
-    {
-        cout<<"L"<<" ";
-    }
 }
