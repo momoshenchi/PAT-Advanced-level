@@ -53,7 +53,7 @@ bool jug_prime(int n)
     return 0;
 }
 
-string to_num(int num,int radix)
+string to_num(int num,int radix)            十进制转radix
 {
     stack<int>sta;
     while(num)
@@ -70,7 +70,7 @@ string to_num(int num,int radix)
     return s;
 }
 
-int to_s(string num,int radix)
+int to_s(string num,int radix)             //转为十进制
 {
     int sum=0;
     for(int i=0;i<num.size();++i)
